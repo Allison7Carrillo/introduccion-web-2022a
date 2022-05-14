@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Tarea</title>
+
+    <link rel="stylesheet" href="./public/css/estiloFormulario.css">
+</head>
+<body>
+    <form action=" ">
+      
+        <!-- input tipo texto para el email -->
+        <label for="email">Email:</label> <br>
+        <input type="text" name="email" id="email">
+        <br>
+        <!-- input tipo texto para la contraseña -->
+        <label for="password" class="password">Password:</label><br>
+        <input type="text" name="password" id="password" >
+        
+        <!-- input tipo texto para el domicilio-->
+        <label for="address" >Address:</label><br>
+        <input type="text" name="address" id="address"  placeholder="1234 Main St" >
+        <br>
+        <!-- input tipo texto para el domicilio segunda caja-->
+        <label for="address2" >Address 2:</label><br>
+        <input type="text" name="address2" id="address2"  placeholder="Apartment, studio or floor">
+        <br><br>
+      <!------------------------ULTIMA LINEA-------------------->
+        <!-- input tipo texto para el domicilio segunda caja-->
+        <label for="city" >City:</label><br>
+        <input type="text" name="city" id="city">
+        
+        <!-- input tipo select -->
+        <label for="state" class="state">State:
+
+        </label> <br>
+            <select name="state" id="state">
+                <option>Choose...-</option>
+                <option value="jalisco">Jalisco</option>
+                <option value="nayarit">Nayarit</option>
+                <option value="yucatan">Yucatan</option>
+                
+            </select>
+      <!-- input tipo texto para archivo zip (no sé si se pueda tipo text o file :/ )-->
+        <label for="zip" class="zip">Zip:</label><br>
+        <input type="text" name="zip" id="zip" >
+        
+ 
+        <!--Input de tipo checkbox -->
+         <input type="checkbox" name="vehiculo" id="bici" value="bici">
+         <label for="bici">Check me out</label>  <br> <br>
+
+         <input type="submit" class="btn-primary" value="Sign it">
+   
+    </form>
+</body>
+</html>

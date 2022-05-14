@@ -1,0 +1,18 @@
+/*Selector combinador descendiente*/
+
+div p{
+    background-color: yellow;
+}
+/*Selector combinador hijo*/
+div#hijo > p{
+     background-color: coral;
+}
+/*Selector combinador de hermano adyacente
+div + p{
+    background-color: yellow;
+}*/
+
+/*Selector combinador de hermanos generales*/
+/*div ~ p {
+    background-color: yellow;
+}*/

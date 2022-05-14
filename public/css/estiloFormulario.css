@@ -1,0 +1,73 @@
+body{
+  background-image: url(../multimedia/todofondos-colorespasteles5-350x219.jpg);
+}
+#password{
+    float:right;
+    margin-top:-3.8%;
+    margin-right: 50% ;
+}
+.password{
+    float:right;
+    margin-top: -3.9%;
+    margin-right: 68% ;
+}
+.state{
+    float:right;
+    margin-top: -1.46%;
+    margin-right: 72% ;
+}
+
+#zip{
+    float:right;
+    margin-top: -3.6%;
+    margin-right: 50% ;
+    width: 100px;
+}
+.zip{
+    float:right;
+    margin-top: -3.6%;
+    margin-right: 51% ;
+    width: 100px;
+}
+
+.btn-primary{
+    border:0;
+    width: 60px;
+    padding: 8px 8px;
+    background-color: #007bff;
+    color:white;
+    border-radius: 7px;
+
+}
+
+input[type="text"], input[type="password"]{
+	border: 0;
+	background: white;
+	border: 1px solid grey;
+	padding: 8px 8px;
+	width: 300px;
+	border-radius: 7px;
+}
+
+select{
+	background: white;
+	border: 1px solid grey;
+	padding: 8px 8px;
+	width: 195px;
+	border-radius: 7px;
+   /*Para la posición*/
+   float:right;
+   margin-top: -2.5%;
+   margin-right: 61% ;
+
+}
+#address, #address2{
+    width: 662px;
+}
+form > label{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 13px;
+    
+}
+
+

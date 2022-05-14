@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../../public/bootstrap/css/bootstrap.min.css">
+
+    <title>Valida Form Tarea</title>
+ </head>
+<body style="background-color: #fdb719;">
+
+  <h1 style="font-family:'Times New Roman', Times, serif ; color: red;">Formulario alizmoon</h1>
+    <div class="container" style="padding-top: 10px;">
+    <div>
+      <form class="row g-3 needs-validation" novalidate onsubmit="validaFormulario()">
+        <div class="col-md-12">
+          <label for="validationCustom01" class="form-label">Nombre</label>
+          <input type="text" class="form-control" id="validationCustom01"  required>
+          <div class="valid-feedback">
+            Luce bien!
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="validationCustomUsername" class="form-label">Email</label>
+          <div class="input-group has-validation">
+            <span class="input-group-text" id="inputGroupPrepend">@</span>
+            <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
+            <div class="invalid-feedback">
+              Por favor introduce un Email.
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <label for="validationCustom02" class="form-label">Contraseña</label>
+          <input type="password" class="form-control" id="validationCustom02"  required>
+          <div class="valid-feedback">
+            Luce bien!
+          </div>
+        </div>
+
+        <div class="col-md-12">
+          <label for="validationCustom06" class="form-label">Domicilio</label>
+          <input type="text" class="form-control" id="validationCustom06"  required>
+          <div class="valid-feedback">
+            Looks good!
+          </div>
+        </div>
+        
+        <div class="col-md-6">
+          <label for="validationCustom03" class="form-label">Ciudad</label>
+          <input type="text" class="form-control" id="validationCustom03" required>
+          <div class="invalid-feedback">
+            Por favor introduce una ciudad .
+          </div>
+        </div>
+        <div class="col-md-3">
+          <label for="validationCustom04" class="form-label">Estado</label>
+          <select class="form-select" id="validationCustom04" required>
+            <option selected disabled value="">Elija una opción...</option>
+            <option value="JAL">Jalisco </option>
+            <option value="YUC">Yucatan</option>
+            <option value="BCS">Baja California Sur</option>
+            <option value="SON">Sonora</option>
+            <option value="NAY">Nayarit</option>
+            
+          </select>
+          <div class="invalid-feedback">
+            Selecciona un estado valido.
+          </div>
+        </div>
+        <div class="col-md-3">
+          <label for="validationCustom05" class="form-label">CP</label>
+          <input type="text" class="form-control" id="validationCustom05" required>
+          <div class="invalid-feedback">
+            Introduce un CP valido.
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+            <label class="form-check-label" for="invalidCheck">
+              Acepto los terminos y condiciones
+            </label>
+            <div class="invalid-feedback">
+              Debes aceptar terminos y condiciones.
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <button class="btn btn-primary" type="submit">Guardar</button>
+        </div>
+      </form>
+      </div>
+    </div>
+
+    <script>
+
+
+
+       
+       (function () {
+     
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  var forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    } )
+
+})()
+
+function validaFormulario() {
+      //Recuperamos variables de select
+      var estado=document.getElementById("validationCustom04").selectedIndex;
+       //Recuperamos variables
+        var nombre= document.getElementById("validationCustom01").value;
+        var email= document.getElementById("validationCustomUsername").value;
+        var pass= document.getElementById("validationCustom02").value;
+        var domicilio= document.getElementById("validationCustom06").value;
+        var ciudad= document.getElementById("validationCustom03").value;
+        var cp= document.getElementById("validationCustom05").value;
+
+        //VALORES
+        expr = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/; //para el email
+        exprpass= /^(?=.*\d)(?=.*[#$@!%&*?])[A-Za-z\d#$@!%&*?]{8,}$/; //para la contraseña
+        //Validaciones
+        if(nombre== null || nombre.length==0 || /^([0-9])*$/.test(nombre)){
+			 alert("Debes escribir un nombre (solo letras)");
+			 document.getElementById("validationCustom01").focus();
+	        return false;
+
+        }else if(!expr.test(email)){
+			 alert("La dirección de correo es incorrecta (recuerda el .com)");
+			 document.getElementById("validationCustomUsername").focus();
+	        return false;
+      }else if(!exprpass.test(pass)){
+        alert("La contraseña debe ser segura(8 caract, 1 núm, 1 carac especi.)");
+			 document.getElementById("validationCustom02").focus();
+        return false;
+      }else if(domicilio== null || domicilio.length==0 || /^\s+$/.test(domicilio)){
+        alert("Debes escribir un domicilio");
+			 document.getElementById("validationCustom06").focus();
+	        return false;
+      }else if(ciudad== null || ciudad.length==0 || /^\s+$/.test(ciudad)){
+        alert("Debes escribir una ciudad");
+			 document.getElementById("validationCustom03").focus();
+	        return false;
+      }else if (cp == null || cp.length == 0 || cp.length>5 || !/^([0-9])*$/.test(cp)){
+			 alert("Debes escribir el CP (SOLO 5 NUMEROS ENTEROS)");
+			 document.getElementById("validationCustom05").focus();
+             return false;	 
+		 }
+     alert("LOS DATOS FUERON GUARDADOS");
+
+    }
+    </script>
+</body>
+</html>

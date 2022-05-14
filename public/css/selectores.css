@@ -1,0 +1,24 @@
+p{
+    text-align: center;
+    color: red;
+}
+/* Selector por id*/
+#id1{
+    text-align: right;
+    color: blue;
+}
+/* Selector por clase*/
+.clase1{
+    color: brown;
+    font-family: Verdana;
+}
+/* Selector combinado nombre y clase*/
+p.clase2{
+    text-align: left;
+    font-size: 30px;
+    color: black;
+}
+/* Selector agrupado*/
+h1, h2{
+    background-color: bisque;
+}
